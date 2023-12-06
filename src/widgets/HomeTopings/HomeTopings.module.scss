@@ -1,0 +1,31 @@
+@import "@/styles/mixins";
+
+.home_topings{
+    background: rgb(17,0,0);
+    background: radial-gradient(circle, rgba(17,0,0,0.9332983193277311) 0%, rgba(14,0,0,1) 23%);
+    .title{
+        font-family: var(--font-secondary);
+        font-weight: 400;
+    }
+    .subtitle{
+        position: relative;
+        &:after{
+            position: absolute;
+            content: "";
+            left: 50%;
+            width: 100px;
+        }
+    }
+    .image_wrap{
+        max-width: 1113px;
+        margin: auto;
+        .figure{
+            @include aspectRatio(1113, 427);
+        }
+    }
+    .shape{
+        img{
+            object-fit: contain;
+        }
+    }
+}

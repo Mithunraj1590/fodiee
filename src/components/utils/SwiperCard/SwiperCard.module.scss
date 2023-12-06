@@ -1,0 +1,18 @@
+@import "@/styles/mixins";
+
+.image_wrap{
+    max-width: 725px;
+    height: auto;
+    margin: auto;
+    z-index: 12;
+    position: relative;
+    .figure{
+        position: relative;
+        @include aspectRatio(725, 579);
+    }
+}
+.title{
+    font-family: var(--font-secondary);
+    font-weight: 400;
+    color: #fff;
+}

@@ -1,0 +1,22 @@
+@import "@/styles/mixins";
+
+.homebanner {
+    height: calc(100vh - 60px);
+
+    .title {
+        font-family: var(--font-secondary);
+        font-weight: 400;
+    }
+
+    .banner_wrap {
+        margin: 0 auto;
+        max-width: 537px;
+
+        box-shadow: rgb(21, 0, .7) 16px -81px 81px 137px;
+
+        .figure {
+            @include aspectRatio(537, 542);
+        }
+    }
+
+}

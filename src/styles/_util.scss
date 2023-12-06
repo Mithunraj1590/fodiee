@@ -1,0 +1,62 @@
+//colors
+@import "./variables";
+@import "./mixins";
+$primary: #e30613;
+//fonts
+$primary-font: var(--bs-body-font-family);
+$secondary-font :var(--font-secondary);
+$base-size: 18;
+
+@function size($target, $context: $base-size) {
+  @return ($target / $context) * 1rem;
+}
+
+@mixin min-max($resMin, $resMax) {
+  @media (min-width: $resMin+px) and (max-width: $resMax+px) {
+    @content;
+  }
+}
+
+@mixin max($res) {
+  @media (max-width: $res+px) {
+    @content;
+  }
+}
+
+@mixin min($res) {
+  @media (min-width: $res+px) {
+    @content;
+  }
+}
+
+@mixin lineHeight($font, $line) {
+  line-height: calc($line/$font);
+}
+
+
+@mixin lineClamp($lines) {
+  display: -webkit-box;
+  -webkit-line-clamp: $lines;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+@mixin aspectRatio($w, $h) {
+  padding-bottom: calc(($h / $w) * 100%);
+  position: relative;
+
+  &>img,
+  &>picture {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+}

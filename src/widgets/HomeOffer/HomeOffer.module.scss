@@ -1,0 +1,19 @@
+@import "@/styles/mixins";
+
+.image_wrap{
+    max-width: 762px;
+    margin: auto;
+    position: relative;
+    &::after{
+       content: "";
+       position: absolute;
+       right: -23%;
+       top: -20%;
+       width: 603px;
+       height: 332px;
+       background-image: url(/image/offer-vector.png)
+    }
+    .figure{
+        @include aspectRatio(762, 555);
+    }
+}
